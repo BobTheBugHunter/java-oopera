@@ -1,4 +1,4 @@
-package org.example;
+package TheatreLogic;
 
 public class Person {
     private String name;
@@ -16,7 +16,7 @@ public class Person {
     }
 
     public void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
+        if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Имя не может быть пустым");
         }
         this.name = name;
@@ -27,7 +27,7 @@ public class Person {
     }
 
     public void setSurname(String surname) {
-        if (surname == null || surname.trim().isEmpty()) {
+        if (surname == null || surname.isBlank()) {
             throw new IllegalArgumentException("Фамилия не может быть пустой");
         }
     }
@@ -40,5 +40,14 @@ public class Person {
         this.gender = gender;
     }
 
+    /* ********* переопределил ************ */
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + getName() + '\'' +
+                ", surname='" + getSurname() + '\'' +
+                ", gender='" + getGender() + '\'' +
+                '}';
+    }
 
 }

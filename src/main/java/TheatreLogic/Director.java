@@ -1,4 +1,4 @@
-package org.example;
+package TheatreLogic;
 
 public class Director extends Person {
     private int numberOfShows;
@@ -7,7 +7,6 @@ public class Director extends Person {
         super(name, surname, gender);
         this.numberOfShows = numberOfShows;
     }
-
 
     public int getNumberOfShows() {
         return numberOfShows;
@@ -21,8 +20,13 @@ public class Director extends Person {
         }
     }
 
-    public void printInfo() {
-        System.out.println("Имя режиссёра: " + getName()+ "\n" + " Фамилия режиссёра: " + getSurname() +
-                "\n" + " Пол режиссёра: " + getGender() + "\n");
+    /* ********* переопределил ************ */
+    @Override
+    public String toString() {
+        return "Director{" +
+                "name='" + getName() + '\'' +
+                ", surname='" + getSurname() + '\'' +
+                ", gender='" + getGender() + '\'' +
+                '}';
     }
 }

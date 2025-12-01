@@ -1,4 +1,4 @@
-package org.example;
+package TheatreLogic;
 
 public class Actor extends Person{
     private double height;

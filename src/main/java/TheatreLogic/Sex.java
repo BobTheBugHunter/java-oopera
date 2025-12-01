@@ -1,4 +1,4 @@
-package org.example;
+package TheatreLogic;
 
 public enum Sex {
     MALE,

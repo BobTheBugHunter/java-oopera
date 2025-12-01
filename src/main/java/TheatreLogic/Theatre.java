@@ -1,4 +1,4 @@
-package org.example;
+package TheatreLogic;
 
 import java.util.ArrayList;
 
@@ -49,6 +49,10 @@ public class Theatre {
 
         System.out.println("\nТекст либретто для спектакля: " + opera.getTitle());
         System.out.println(opera.getLibrettoText());
+
+        /* ****Использовал toString() чтобы проверить всё ли ок****** */
+        System.out.println(directorElena.toString());
+        System.out.println(musicAuthor.toString());
 
     }
 }

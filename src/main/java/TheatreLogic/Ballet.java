@@ -1,4 +1,4 @@
-package org.example;
+package TheatreLogic;
 
 import java.util.ArrayList;
 

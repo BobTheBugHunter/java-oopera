@@ -1,4 +1,4 @@
-package org.example;
+package TheatreLogic;
 
 import java.util.ArrayList;
 
@@ -42,7 +42,12 @@ public class Show {
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        if (!title.isBlank()) {
+            this.title = title;
+        } else {
+            System.out.println("Заголовок не может быть пустым!");
+        }
+
     }
 
     public ArrayList<Actor> getListOfActors() {
@@ -50,7 +55,7 @@ public class Show {
     }
 
     public void setListOfActors(ArrayList<Actor> listOfActors) {
-        this.listOfActors = listOfActors;
+        this.listOfActors = listOfActors; //по хорошему наверное надо сделать во всех подобных методах проверку на null
     }
 
     public void printListOfActors() {
@@ -61,7 +66,7 @@ public class Show {
     }
 
     public void addNewActorToShow(Actor actor) {
-        if (listOfActors.contains(actor)) {
+        if (isListOfActorsContainsActor(actor)) {
             System.out.println("Такой актёр уже есть в спектакле!");
         } else {
             listOfActors.add(actor);
@@ -69,7 +74,7 @@ public class Show {
     }
 
     public void replaceActorInShow(Actor actor, String surname) {
-        if (listOfActors.contains(actor)) {
+        if (isListOfActorsContainsActor(actor)) {
             System.out.println("Актёр " + actor.getName() + " " + actor.getSurname() +
                     " уже есть в спектакле " + title + "."
                     + " Вот актёры которые участвуют в этом спектакле: \n");
@@ -88,6 +93,14 @@ public class Show {
             }
         }
         System.out.println("Актёра с такой фамилией не существует");
+    }
+    /* ********* добавил новый метод ************ */
+    public boolean isListOfActorsContainsActor(Actor actor) {
+        if (listOfActors.contains(actor)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
